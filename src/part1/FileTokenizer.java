@@ -123,6 +123,10 @@ public class FileTokenizer {
 		System.out.println("***************Printing tokens count:");	    
 	    HashMap<String, Integer> sortedMap = sortMap(tokenCount); 
 	    Iterator<Entry<String, Integer>> it = sortedMap.entrySet().iterator();
+//	    for(int i =0;i<10;i++){
+//	    	Map.Entry<String, Integer> pair = (Map.Entry<String, Integer>)it.next();
+//	    	System.out.println(pair.getKey() + " = " + pair.getValue());
+//	    }
 	    while (it.hasNext()) {
 	        Map.Entry<String, Integer> pair = (Map.Entry<String, Integer>)it.next();
 	        System.out.println(pair.getKey() + " = " + pair.getValue());

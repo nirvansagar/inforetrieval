@@ -31,7 +31,10 @@ public class Starter {
 		
 		FileTokenizer ft = new FileTokenizer(file);
 		try {
+			long startTime = System.currentTimeMillis();
 			ft.tokenizeFile();
+			long endTime = System.currentTimeMillis();
+			System.out.println("tokenizeFile time " + (endTime-startTime));
 		} catch (FileNotFoundException e) {
 			System.out.println("Problem reading file");
 			e.printStackTrace();
@@ -45,25 +48,34 @@ public class Starter {
 	}
 
 	private static void testPartA(FileTokenizer ft) {
-		ft.printTokens();		
+//		Sft.printTokens();		
 	}
 
 	private static void testPartB(FileTokenizer ft) {
+		long startTime = System.currentTimeMillis();
 		ft.computeTokenFrequencies(ft.getListOfTokens());
+		long endTime = System.currentTimeMillis();
+		System.out.println("computeTokenFrequencies time " + (endTime-startTime));
 		ft.printTokenFrequencies();		
 	}
 
 	private static void testPartC(FileTokenizer ft) {
+		long startTime = System.currentTimeMillis();
 		ft.computeThreeGrams(ft.getListOfTokens());
-		ft.printThreegrams();		
+		long endTime = System.currentTimeMillis();
+		System.out.println("computeThreeGrams time " + (endTime-startTime));
+//		ft.printThreegrams();		
 	}
 
 	private static void testPartD(FileTokenizer ft) {
 		Anagrammer ang = new Anagrammer();		
 		
 		ArrayList<Entry<String, ArrayList<String>>> anagrams;
+		long startTime = System.currentTimeMillis();
 		anagrams = ang.detectAnagrams(ft.getListOfTokens());
-		ang.printAnagrams(anagrams);		
+		long endTime = System.currentTimeMillis();
+		System.out.println("detectAnagrams time " + (endTime-startTime));
+//		ang.printAnagrams(anagrams);		
 	}
 
 }
